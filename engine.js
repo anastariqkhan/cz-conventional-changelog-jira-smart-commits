@@ -79,8 +79,7 @@ module.exports = function(options) {
         {
           type: 'input',
           name: 'jira',
-          message:
-            'Enter JIRA issue (DAZ-12345):',
+          message: 'Enter JIRA issue (DAZ-12345):',
           default: '',
           validate: function(jira) {
             return /^[A-Z]+-[0-9]+$/.test(jira);
@@ -215,7 +214,8 @@ module.exports = function(options) {
         var scope = answers.scope ? '(' + answers.scope + ')' : '';
 
         // Hard limit this line in the validate
-        var head = answers.type + scope + ': ' + answers.jira + ' ' + answers.subject;
+        var head =
+          answers.type + scope + ': ' + answers.jira + ' ' + answers.subject;
 
         // Wrap these lines at options.maxLineWidth characters
         var body = answers.body ? wrap(answers.body, wrapOptions) : false;
