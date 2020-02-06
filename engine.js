@@ -84,7 +84,7 @@ module.exports = function(options) {
           validate: function(jira) {
             return /^[A-Z]+-[0-9]+$/.test(jira);
           },
-          transformer: function(jira) {
+          filter: function(jira) {
             return jira.toUpperCase();
           }
         },
