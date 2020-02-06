@@ -14,7 +14,7 @@ var filter = function(array) {
 
 var headerLength = function(answers) {
   return (
-    answers.type.length + 2 + (answers.scope ? answers.scope.length + 2 + answers.jira.length + 1: 0)
+    answers.type.length + 2 + (answers.scope ? answers.scope.length + 2: 0) + answers.jira.length + 1
   );
 };
 

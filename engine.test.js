@@ -340,8 +340,8 @@ describe('defaults', function() {
 
 describe('prompts', function() {
   it('commit subject prompt for commit w/ out scope', function() {
-    expect(questionPrompt('subject', { type })).to.contain(
-      `(max ${defaultOptions.maxHeaderWidth - type.length - 2} chars)`
+    expect(questionPrompt('subject', { type, jira })).to.contain(
+      `(max ${defaultOptions.maxHeaderWidth - type.length - jira.length - 3} chars)`
     );
   });
   it('commit subject prompt for commit w/ scope', function() {
@@ -360,6 +360,7 @@ describe('transformation', function() {
     expect(
       questionTransformation('subject', {
         type,
+        jira,
         subject
       })
     ).to.equal(chalk.green(`(${subject.length}) ${subject}`)));
@@ -367,6 +368,7 @@ describe('transformation', function() {
     expect(
       questionTransformation('subject', {
         type,
+        jira,
         subject: longBody
       })
     ).to.equal(chalk.red(`(${longBody.length}) ${longBody}`)));
