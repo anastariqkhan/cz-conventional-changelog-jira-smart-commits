@@ -34,6 +34,7 @@
     "@types/mocha": "^5.2.7",
     "chai": "^4.2.0",
     "cosmiconfig": "^5.2.1",
+    "cz-conventional-changelog": "^3.1.0",
     "mocha": "^6.2.0",
     "mock-require": "^3.0.3",
     "prettier": "^1.15.3",
@@ -45,7 +46,7 @@
   },
   "config": {
     "commitizen": {
-      "path": "./index.js"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   },
   "publishConfig": {
