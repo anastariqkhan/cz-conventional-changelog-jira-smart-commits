@@ -193,10 +193,11 @@ module.exports = function(options) {
 
         // parentheses are only needed when a scope is present
         var scope = answers.scope ? '(' + answers.scope + ')' : '';
+        var jira = answers.jira ? answers.jira + ' ' : '';
 
         // Hard limit this line in the validate
         var head =
-          answers.type + scope + ': ' + answers.jira + ' ' + answers.subject;
+          answers.type + scope + ': ' + jira + answers.subject;
 
         // Wrap these lines at options.maxLineWidth characters
         var body = answers.body ? wrap(answers.body, wrapOptions) : false;
