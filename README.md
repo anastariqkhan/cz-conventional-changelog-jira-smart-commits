@@ -42,6 +42,7 @@ The following environment varibles can be used to override any default configura
 * CZ_BODY = defaultBody
 * CZ_MAX_HEADER_WIDTH = maxHeaderWidth
 * CZ_MAX_LINE_WIDTH = maxLineWidth
+* CZ_SKIP_JIRA_ISSUE = skipJiraIssue
 
 ### Commitlint
 

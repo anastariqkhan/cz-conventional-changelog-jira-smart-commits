@@ -46,7 +46,8 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./index.js",
+      "skipJiraIssue": true
     }
   },
   "publishConfig": {
