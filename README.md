@@ -16,17 +16,14 @@ and then add the following to package.json:
 
 ```json
 {
-  // ...
   "scripts": {
     "commit": "git-cz"
   },
-  // ...
   "config": {
     "commitizen": {
       "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira"
     }
   }
-  // ...
 }
 ```
 
