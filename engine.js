@@ -5,6 +5,7 @@ var map = require('lodash.map');
 var longest = require('longest');
 var rightPad = require('right-pad');
 var chalk = require('chalk');
+const branch = require('git-branch');
 
 const LimitedInputPrompt = require('./LimitedInputPrompt');
 var filter = function(array) {
@@ -37,6 +38,12 @@ module.exports = function(options) {
 
   const minHeaderWidth = options.minHeaderWidth || 2;
   const maxHeaderWidth = options.maxHeaderWidth || 72;
+
+  const branchName = branch.sync() || '';
+  const jiraIssueRegex = /(?<jiraIssue>\/[A-Z]+-\d+)/;
+  const matchResult = branchName.match(jiraIssueRegex);
+  const jiraIssue =
+    matchResult && matchResult.groups && matchResult.groups.jiraIssue;
 
   return {
     // When a user runs `git cz`, prompter will
@@ -73,7 +80,7 @@ module.exports = function(options) {
           name: 'jira',
           message: 'Enter JIRA issue (DAZ-12345):',
           when: options.jiraMode,
-          default: '',
+          default: jiraIssue ? jiraIssue.substring(1) : '',
           validate: function(jira) {
             return /^[A-Z]+-[0-9]+$/.test(jira);
           },
@@ -195,7 +202,7 @@ module.exports = function(options) {
         var jira = answers.jira ? answers.jira + ' ' : '';
 
         // Hard limit this line in the validate
-        var head = answers.type + scope + ': ' + jira + answers.subject;
+        const head = answers.type + scope + ': ' + jira + answers.subject;
 
         // Wrap these lines at options.maxLineWidth characters
         var body = answers.body ? wrap(answers.body, wrapOptions) : false;
