@@ -45,7 +45,7 @@ and then add the following to package.json:
 
 Like commitizen, you can specify the configuration of cz-conventional-changelog-for-jira through the package.json's `config.commitizen` key, or with environment variables.
 
-| Environment variable | package.json   | Default   | Explanation                                                                                                                                                           |
+| Environment variable | package.json   | Default   | Description                                                                                                                                                           |
 | -------------------- | -------------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | CZ_JIRA_MODE         | jiraMode       | true      | If this is set to true, CZ will ask for a Jira issue and put it in the commit head. If set to false CZ will ask for the issue in the end, and can be used for GitHub. |
 | CZ_MAX_HEADER_WIDTH  | maxHeaderWidth | 72        | This limits how long a commit message head can be.                                                                                                                    |
