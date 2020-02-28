@@ -38,7 +38,7 @@ and then add the following to package.json:
 ### Usage
 
 <p align="center">
-	<image alt="Gif of terminal when using cz-conventional-changelog-for-jira" src="images/demo.gif" width="80%">
+	<image alt="Gif of terminal when using cz-conventional-changelog-for-jira" src="https://raw.githubusercontent.com/digitalroute/cz-conventional-changelog-for-jira/master/images/demo.gif" width="80%">
 </p>
 
 ## Configuration
