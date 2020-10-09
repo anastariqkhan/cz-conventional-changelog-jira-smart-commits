@@ -91,7 +91,7 @@ module.exports = function(options) {
             getFromOptionsOrDefaults('jiraPrefix') +
             '-12345):',
           when: options.jiraMode,
-          default: jiraIssue ? jiraIssue.substring(1) : '',
+          default: jiraIssue || '',
           validate: function(jira) {
             return /^(?<!([A-Z0-9]{1,10})-?)[A-Z0-9]+-\d+$/.test(jira);
           },
