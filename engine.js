@@ -32,11 +32,19 @@ module.exports = function(options) {
     return options[key] || defaults[key];
   };
   var types = getFromOptionsOrDefaults('types');
-
   var length = longest(Object.keys(types)).length + 1;
   var choices = map(types, function(type, key) {
     return {
       name: rightPad(key + ':', length) + ' ' + type.description,
+      value: key
+    };
+  });
+
+  var transitions = getFromOptionsOrDefaults('transitions');
+  var lengthTransitions = longest(Object.keys(transitions)).length + 1;
+  var transitionChoices = map(transitions, function(type, key) {
+    return {
+      name: rightPad(type.title + ':', lengthTransitions) + ' ' + type.description,
       value: key
     };
   });
@@ -177,7 +185,7 @@ module.exports = function(options) {
           name: 'isIssueAffected',
           message: 'Does this change affect any open issues?',
           default: options.defaultIssues ? true : false,
-          when: !options.jiraMode
+          when: options.jiraMode
         },
         {
           type: 'input',
@@ -194,7 +202,49 @@ module.exports = function(options) {
         {
           type: 'input',
           name: 'issues',
-          message: 'Add issue references (e.g. "fix #123", "re #123".):\n',
+          message: 'Jira Issue ID(s) (required):\n',
+          when: function(answers) {
+            return answers.isIssueAffected;
+          },
+          validate: function(input) {
+            if (!input) {
+              return 'Must specify issue IDs, otherwise, don\'t specify it affects open issues (Ctrl+C to cancel)';
+            } else {
+              return true;
+            }
+          },
+          default: jiraIssue ? jiraIssue : undefined
+        },
+        {
+          type: 'list',
+          name: 'workflow',
+          message: 'Workflow command (todo, in progress, etc.) (optional):\n',
+          choices: transitionChoices,
+          when: function(answers) {
+            return answers.isIssueAffected;
+          },
+          validate: function(input) {
+            if (input && input.indexOf(' ') !== -1) {
+              return 'Workflows cannot have spaces in smart commits. If your workflow name has a space, use a dash (-)';
+            } else {
+              return true;
+            }
+          },
+          default: options.defaultIssues ? options.defaultIssues : undefined
+        },
+        {
+          type: 'input',
+          name: 'time',
+          message: 'Time spent (i.e. 3h 15m) (optional):\n',
+          when: function(answers) {
+            return answers.isIssueAffected;
+          },
+          default: options.defaultIssues ? options.defaultIssues : undefined
+        },
+        {
+          type: 'input',
+          name: 'comment',
+          message: 'Jira comment (optional):\n',
           when: function(answers) {
             return answers.isIssueAffected;
           },
@@ -228,7 +278,18 @@ module.exports = function(options) {
 
         var issues = answers.issues ? wrap(answers.issues, wrapOptions) : false;
 
-        const fullCommit = filter([head, body, breaking, issues]).join('\n\n');
+        var footer = false
+
+        if(!issues){
+          
+        }else {
+        var footer = filter([ 
+          issues.trim(),
+          answers.time ? '#time ' + answers.time : undefined,
+          answers.workflow ? '#' + answers.workflow : undefined,
+          answers.comment ? '#comment ' + answers.comment : undefined]).join(' ');
+        }
+        const fullCommit = filter([head, body, breaking, footer]).join('\n\n');
 
         if (testMode) {
           return commit(fullCommit);
