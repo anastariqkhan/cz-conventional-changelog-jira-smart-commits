@@ -1,5 +1,5 @@
 var conventionalCommitTypes = require('./types');
-var workflowTransitions = require('./transitions');
+var workflowTransitions = require('./workflows');
 
 module.exports = {
   types: conventionalCommitTypes,
@@ -10,5 +10,5 @@ module.exports = {
   maxLineWidth: 100,
   jiraPrefix: 'DAZ',
   jiraOptional: false,
-  transitions: workflowTransitions
+  workflows: workflowTransitions
 };

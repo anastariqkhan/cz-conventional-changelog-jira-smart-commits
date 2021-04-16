@@ -1,4 +1,8 @@
 module.exports = {
+  nothing: {
+    description: 'Do not Transition the issue',
+    title: 'DO NOTHING'
+  },
   todo: {
     description: 'Transition the issue in TODO',
     title: 'TODO'

@@ -40,11 +40,11 @@ module.exports = function(options) {
     };
   });
 
-  var transitions = getFromOptionsOrDefaults('transitions');
-  var lengthTransitions = longest(Object.keys(transitions)).length + 1;
-  var transitionChoices = map(transitions, function(type, key) {
+  var workflows = getFromOptionsOrDefaults('workflows');
+  var lengthWorkflows = longest(Object.keys(workflows)).length + 1;
+  var workflowChoices = map(workflows, function(type, key) {
     return {
-      name: rightPad(type.title + ':', lengthTransitions) + ' ' + type.description,
+      name: rightPad(type.title + ':', lengthWorkflows) + ' ' + type.description,
       value: key
     };
   });
@@ -218,8 +218,8 @@ module.exports = function(options) {
         {
           type: 'list',
           name: 'workflow',
-          message: 'Workflow command (todo, in progress, etc.) (optional):\n',
-          choices: transitionChoices,
+          message: 'Select the Workflow for JIRA Issue (todo, in progress, etc.):\n',
+          choices: workflowChoices,
           when: function(answers) {
             return answers.isIssueAffected;
           },
@@ -281,14 +281,22 @@ module.exports = function(options) {
         var footer = false
 
         if(!issues){
+        
+        } else {
+
+          var issueWorkflow = answers.workflow ? '#' + answers.workflow : undefined
           
-        }else {
-        var footer = filter([ 
-          issues.trim(),
-          answers.time ? '#time ' + answers.time : undefined,
-          answers.workflow ? '#' + answers.workflow : undefined,
-          answers.comment ? '#comment ' + answers.comment : undefined]).join(' ');
+          if(issueWorkflow === "#nothing")
+              issueWorkflow = undefined
+
+          footer = filter([
+            issues.trim(),
+            answers.time ? '#time ' + answers.time : undefined,
+            issueWorkflow,
+            answers.comment ? '#comment ' + answers.comment : undefined
+          ]).join(' ');
         }
+        
         const fullCommit = filter([head, body, breaking, footer]).join('\n\n');
 
         if (testMode) {

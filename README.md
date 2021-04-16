@@ -110,7 +110,7 @@ List of all supported configurable options when using the _configurable_ approac
 | defaultIssues  | undefined | A default issue.                                                                                                                                                      |
 | jiraPrefix     | 'DAZ'     | The default JIRA ticket prefix that will be displayed.                                                                                                                |
 | types          | ./types.js| A list (JS Object) of supported commit types.                                                                                                                         |
-| transitions    | ./transitions.js| A list (JS Object) of supported Jira issues Workflow transitions types.                                                                                                                         |
+| workflows    | ./workflows.js| A list (JS Object) of supported Jira issues Workflow transitions types.                                                                                                                         |
 | scopes         | undefined | A list (JS Array) of scopes that will be available for selection. Note that adding this will change the scope field from Inquirer 'input' to 'list'.                  |
 | jiraOptional   | false     | If this is set to true, you can leave the JIRA field blank.                                                                                                           |
 
