@@ -1,7 +1,7 @@
 {
-  "name": "cz-conventional-changelog-for-jira",
+  "name": "cz-conventional-changelog-for-jira-smart-commits",
   "version": "1.0.0",
-  "description": "Commitizen adapter following the conventional-changelog format and also asking for JIRA issue.",
+  "description": "Commitizen adapter following the conventional-changelog format and also asking for JIRA issue with Smart Commits.",
   "main": "index.js",
   "scripts": {
     "commit": "git-cz",
@@ -9,10 +9,10 @@
     "format": "prettier --write *.js",
     "semantic-release": "semantic-release"
   },
-  "homepage": "https://github.com/anastariqkhan/cz-conventional-changelog-for-jira",
+  "homepage": "https://github.com/anastariqkhan/cz-conventional-changelog-jira-smart-commits",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anastariqkhan/cz-conventional-changelog-for-jira.git"
+    "url": "git+https://github.com/anastariqkhan/cz-conventional-changelog-jira-smart-commits.git"
   },
   "engineStrict": true,
   "engines": {
@@ -57,7 +57,7 @@
     "access": "public"
   },
   "bugs": {
-    "url": "https://github.com/anastariqkhan/cz-conventional-changelog-for-jira/issues"
+    "url": "https://github.com/anastariqkhan/cz-conventional-changelog-jira-smart-commits/issues"
   },
   "keywords": [
     "cz-conventional-changelog",
