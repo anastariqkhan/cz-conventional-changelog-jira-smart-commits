@@ -73,9 +73,9 @@ Alternatively, if you want to create your own profile, you can use the _configur
 Here is an example:
 **./index.js**
 ```javascript
-const custom = require('@anastariqkhan/cz-conventional-changelog-for-jira/configurable');
+const custom = require('cz-conventional-changelog-for-jira-smart-commits/configurable');
 // You can do this optionally if you want to extend the commit types
-const defaultTypes = require('@anastariqkhan/cz-conventional-changelog-for-jira/types');
+const defaultTypes = require('cz-conventional-changelog-for-jira-smart-commits/types');
 
 module.exports = custom({
   types: {
