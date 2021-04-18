@@ -2,7 +2,7 @@
 
 Part of the [commitizen](https://github.com/commitizen/cz-cli) family. Prompts for [conventional changelog](https://github.com/conventional-changelog/conventional-changelog) standard and also prompts for a mandatory JIRA issue.
 
-Adds Smart commits functionality in [@digitalroute/cz-conventional-changelog-for-jira](https://github.com/digitalroute/cz-conventional-changelog-jira)
+Adds Smart commits functionality in [@digitalroute/cz-conventional-changelog-for-jira](https://github.com/digitalroute/cz-conventional-changelog-for-jira)
 
 [![npm version](https://img.shields.io/npm/v/cz-conventional-changelog-for-jira-smart-commits.svg?style=flat-square)](https://www.npmjs.org/package/@digitalroute/cz-conventional-changelog-for-jira)
 [![npm downloads](https://img.shields.io/npm/dm/cz-conventional-changelog-for-jira-smart-commits.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@digitalroute/cz-conventional-changelog-for-jira&from=2015-08-01)
