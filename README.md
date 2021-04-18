@@ -18,7 +18,7 @@ Adds Smart commits functionality in [@digitalroute/cz-conventional-changelog-for
 ### Installation
 
 ```bash
-npm install commitizen @anastariqkhan/cz-conventional-changelog-for-jira
+npm install commitizen cz-conventional-changelog-for-jira-smart-commits
 ```
 
 and then add the following to package.json:
