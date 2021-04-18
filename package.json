@@ -1,6 +1,6 @@
 {
   "name": "cz-conventional-changelog-for-jira-smart-commits",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Commitizen adapter following the conventional-changelog format and also asking for JIRA issue with Smart Commits.",
   "main": "index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   "homepage": "https://github.com/anastariqkhan/cz-conventional-changelog-jira-smart-commits",
   "repository": {
     "type": "git",
-    "url": "https://github.com/anastariqkhan/cz-conventional-changelog-jira-smart-commits.git"
+    "url": "git+https://github.com/anastariqkhan/cz-conventional-changelog-jira-smart-commits.git"
   },
   "engineStrict": true,
   "engines": {
