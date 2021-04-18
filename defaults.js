@@ -8,7 +8,7 @@ module.exports = {
   maxHeaderWidth: 72,
   minHeaderWidth: 2,
   maxLineWidth: 100,
-  jiraPrefix: 'DAZ',
-  jiraOptional: false,
+  jiraPrefix: 'AK',
+  jiraOptional: true,
   workflows: workflowTransitions
 };

@@ -2,9 +2,8 @@
 
 Part of the [commitizen](https://github.com/commitizen/cz-cli) family. Prompts for [conventional changelog](https://github.com/conventional-changelog/conventional-changelog) standard and also prompts for a mandatory JIRA issue.
 
-[![npm version](https://img.shields.io/npm/v/@digitalroute/cz-conventional-changelog-for-jira.svg?style=flat-square)](https://www.npmjs.org/package/@digitalroute/cz-conventional-changelog-for-jira)
-[![npm downloads](https://img.shields.io/npm/dm/@digitalroute/cz-conventional-changelog-for-jira.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@digitalroute/cz-conventional-changelog-for-jira&from=2015-08-01)
-[![Build Status](https://img.shields.io/travis/digitalroute/cz-conventional-changelog-for-jira.svg?style=flat-square)](https://travis-ci.org/digitalroute/cz-conventional-changelog-for-jira)
+[![npm version](https://img.shields.io/npm/v/@anastariqkhan/cz-conventional-changelog-for-jira.svg?style=flat-square)](https://www.npmjs.org/package/@digitalroute/cz-conventional-changelog-for-jira)
+[![npm downloads](https://img.shields.io/npm/dm/@anastariqkhan/cz-conventional-changelog-for-jira.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@digitalroute/cz-conventional-changelog-for-jira&from=2015-08-01)
 
 ## Features
 
@@ -17,7 +16,7 @@ Part of the [commitizen](https://github.com/commitizen/cz-cli) family. Prompts f
 ### Installation
 
 ```bash
-npm install commitizen @digitalroute/cz-conventional-changelog-for-jira
+npm install commitizen @anastariqkhan/cz-conventional-changelog-for-jira
 ```
 
 and then add the following to package.json:
@@ -29,15 +28,24 @@ and then add the following to package.json:
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira"
+      "path": "./node_modules/@anastariqkhan/cz-conventional-changelog-for-jira"
     }
   }
 }
 ```
+### Install Globally
+Create a .czrc file in your home directory, with path referring to the preferred, globally installed, commitizen adapter
+```bash
+echo '{ "path": "./node_modules/@anastariqkhan/cz-conventional-changelog-for-jira" }' > ~/.czrc
+```
+After commitizen has been installed, instead of making a commit with git commit you make a commit with:
+```bash
+git cz
+```
 
 ### Usage
 
-![Gif of terminal when using cz-conventional-changelog-for-jira](https://raw.githubusercontent.com/digitalroute/cz-conventional-changelog-for-jira/master/images/demo.gif)
+![Gif of terminal when using cz-conventional-changelog-for-jira](https://raw.githubusercontent.com/anastariqkhan/cz-conventional-changelog-for-jira/master/images/demo.gif)
 
 ## Configuration
 
@@ -63,9 +71,9 @@ Alternatively, if you want to create your own profile, you can use the _configur
 Here is an example:
 **./index.js**
 ```javascript
-const custom = require('@digitalroute/cz-conventional-changelog-for-jira/configurable');
+const custom = require('@anastariqkhan/cz-conventional-changelog-for-jira/configurable');
 // You can do this optionally if you want to extend the commit types
-const defaultTypes = require('@digitalroute/cz-conventional-changelog-for-jira/types');
+const defaultTypes = require('@anastariqkhan/cz-conventional-changelog-for-jira/types');
 
 module.exports = custom({
   types: {
@@ -117,3 +125,4 @@ List of all supported configurable options when using the _configurable_ approac
 ### Commitlint
 
 If using the [commitlint](https://github.com/conventional-changelog/commitlint) js library, the "maxHeaderWidth" configuration property will default to the configuration of the "header-max-length" rule instead of the hard coded value of 72. This can be ovewritten by setting the 'maxHeaderWidth' configuration in package.json or the CZ_MAX_HEADER_WIDTH environment variable.
+
