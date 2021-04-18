@@ -30,7 +30,7 @@ and then add the following to package.json:
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/@anastariqkhan/cz-conventional-changelog-for-jira"
+      "path": "./node_modules/cz-conventional-changelog-for-jira-smart-commits"
     }
   }
 }
@@ -38,7 +38,7 @@ and then add the following to package.json:
 ### Install Globally
 Create a .czrc file in your home directory, with path referring to the preferred, globally installed, commitizen adapter
 ```bash
-echo '{ "path": "./node_modules/@anastariqkhan/cz-conventional-changelog-for-jira" }' > ~/.czrc
+echo '{ "path": "./node_modules/cz-conventional-changelog-for-jira-smart-commits" }' > ~/.czrc
 ```
 After commitizen has been installed, instead of making a commit with git commit you make a commit with:
 ```bash
