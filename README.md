@@ -4,8 +4,8 @@ Part of the [commitizen](https://github.com/commitizen/cz-cli) family. Prompts f
 
 Adds Smart commits functionality in [@digitalroute/cz-conventional-changelog-for-jira](https://github.com/digitalroute/cz-conventional-changelog-for-jira)
 
-[![npm version](https://img.shields.io/npm/v/cz-conventional-changelog-for-jira-smart-commits.svg?style=flat-square)](https://www.npmjs.org/package/@digitalroute/cz-conventional-changelog-for-jira)
-[![npm downloads](https://img.shields.io/npm/dm/cz-conventional-changelog-for-jira-smart-commits.svg?style=flat-square)](http://npm-stat.com/charts.html?package=@digitalroute/cz-conventional-changelog-for-jira&from=2015-08-01)
+[![npm version](https://img.shields.io/npm/v/cz-conventional-changelog-for-jira-smart-commits.svg?style=flat-square)](https://www.npmjs.com/package/cz-conventional-changelog-for-jira-smart-commits)
+[![npm downloads](https://img.shields.io/npm/dm/cz-conventional-changelog-for-jira-smart-commits.svg?style=flat-square)](http://npm-stat.com/charts.html?package=cz-conventional-changelog-for-jira-smart-commits&from=2015-08-01)
 
 ## Features
 
