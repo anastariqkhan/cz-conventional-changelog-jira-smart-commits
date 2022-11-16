@@ -18,7 +18,7 @@ Adds Smart commits functionality in [@digitalroute/cz-conventional-changelog-for
 ### Installation
 
 ```bash
-npm install commitizen cz-conventional-changelog-for-jira-smart-commits
+yarn global add commitizen cz-conventional-changelog-for-jira-smart-commits
 ```
 
 and then add the following to package.json:
@@ -38,7 +38,7 @@ and then add the following to package.json:
 ### Install Globally
 Create a .czrc file in your home directory, with path referring to the preferred, globally installed, commitizen adapter
 ```bash
-echo '{ "path": "./node_modules/cz-conventional-changelog-for-jira-smart-commits" }' > ~/.czrc
+echo '{ "path": "cz-conventional-changelog-for-jira-smart-commits" }' > ~/.czrc
 ```
 After commitizen has been installed, instead of making a commit with git commit you make a commit with:
 ```bash
