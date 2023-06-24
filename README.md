@@ -66,6 +66,8 @@ Like commitizen, you can specify the configuration of cz-conventional-changelog-
 | CZ_BODY              | defaultBody    | undefined | A default body.                                                                                                                                                       |
 | CZ_ISSUES            | defaultIssues  | undefined | A default issue.                                                                                                                                                      |
 | CZ_JIRA_OPTIONAL     | jiraOptional   | false     | If this is set to true, you can leave the JIRA field blank.                                                                                                           |
+| Not available     | workflows   | workflows in list     | Set custom workflow for jira |
+| Not available     | types   | Types in list     | Set custom types    |
 
 ## Dynamic Configuration
 
