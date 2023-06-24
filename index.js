@@ -17,7 +17,8 @@ function getEnvOrConfig(env, configVar, defaultValue) {
 }
 
 const options = {
-  types: conventionalCommitTypes,
+  workflows: config.workflows || defaults.workflows,
+  types: config.types || conventionalCommitTypes,
   jiraMode: getEnvOrConfig(
     process.env.CZ_JIRA_MODE,
     config.jiraMode,
