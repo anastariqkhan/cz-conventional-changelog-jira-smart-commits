@@ -15,13 +15,25 @@ Adds Smart commits functionality in [@digitalroute/cz-conventional-changelog-for
 
 ## Quickstart
 
-### Installation
+> **Note:** This tool is framework-agnostic and works with any project that uses Git and Node.js. You can use it in backend, frontend, CLI tools, libraries, monorepos, and more—not just React projects.
 
+There are two ways to set up `cz-conventional-changelog-for-jira-smart-commits`:
+
+### 1. Per-Project Installation (Recommended)
+
+This is the best approach for teams, as it ensures all contributors use the same commitizen adapter version.
+
+**Using NPM:**
 ```bash
-yarn global add commitizen cz-conventional-changelog-for-jira-smart-commits
+npm install --save-dev commitizen cz-conventional-changelog-for-jira-smart-commits
 ```
 
-and then add the following to package.json:
+**Using Yarn:**
+```bash
+yarn add --dev commitizen cz-conventional-changelog-for-jira-smart-commits
+```
+
+Next, add the following configuration to your `package.json`:
 
 ```json
 {
@@ -35,19 +47,74 @@ and then add the following to package.json:
   }
 }
 ```
-### Install Globally
-Create a .czrc file in your home directory, with path referring to the preferred, globally installed, commitizen adapter
+
+Now, instead of `git commit`, you can run `npm run commit` or `yarn commit`.
+
+### 2. Global Installation
+
+This method is useful if you want to use this adapter for all of your projects.
+
+**Using NPM:**
 ```bash
-echo '{ "path": "cz-conventional-changelog-for-jira-smart-commits" }' > ~/.czrc
+npm install -g commitizen cz-conventional-changelog-for-jira-smart-commits
 ```
-After commitizen has been installed, instead of making a commit with git commit you make a commit with:
+
+**Using Yarn:**
 ```bash
-git cz
+yarn global add commitizen cz-conventional-changelog-for-jira-smart-commits
 ```
+
+Then, create a `.czrc` file in your home directory (`~/.czrc`) and add the following:
+```json
+{
+  "path": "cz-conventional-changelog-for-jira-smart-commits"
+}
+```
+
+Now, you can run `git cz` in any of your repositories.
 
 ### Usage
 
 ![Gif of terminal when using cz-conventional-changelog-for-jira](https://raw.githubusercontent.com/anastariqkhan/cz-conventional-changelog-jira-smart-commits/master/images/demo.gif)
+
+## Using with Non-JavaScript Projects (Android, iOS, Windows, PHP, etc.)
+
+You can use `cz-conventional-changelog-for-jira-smart-commits` in **any project that uses Git**, regardless of the programming language or framework (e.g., Java/Kotlin for Android, Swift/Objective-C for iOS, C# for Windows, PHP, Python, etc.).
+
+The only requirements are:
+- Your project uses **Git** for version control.
+- **Node.js** is installed on your system.
+
+### Steps for Non-JS Projects
+
+1. **Install Node.js** (if not already installed).
+2. **Install this tool globally:**
+   
+   Using NPM:
+   ```bash
+   npm install -g commitizen cz-conventional-changelog-for-jira-smart-commits
+   ```
+   Using Yarn:
+   ```bash
+   yarn global add commitizen cz-conventional-changelog-for-jira-smart-commits
+   ```
+3. **Create a `.czrc` file** in your home directory (`~/.czrc`) with the following content:
+   ```json
+   {
+     "path": "cz-conventional-changelog-for-jira-smart-commits"
+   }
+   ```
+4. **Use it in your project:**
+   - Instead of `git commit`, run:
+     ```bash
+     git cz
+     ```
+   - This will prompt you for a conventional commit message, regardless of your project's language.
+
+**Benefits:**
+- Consistent commit messages across all repositories and languages
+- Automated changelogs and better integration with tools like semantic-release, Jira, etc.
+- Works with any Git project—Java, Swift, C#, PHP, Python, and more
 
 ## Configuration
 
@@ -124,7 +191,7 @@ List of all supported configurable options when using the _configurable_ approac
 | scopes         | undefined | A list (JS Array) of scopes that will be available for selection. Note that adding this will change the scope field from Inquirer 'input' to 'list'.                  |
 | jiraOptional   | false     | If this is set to true, you can leave the JIRA field blank.                                                                                                           |
 
-### Commitlint
+## Commitlint
 
 If using the [commitlint](https://github.com/conventional-changelog/commitlint) js library, the "maxHeaderWidth" configuration property will default to the configuration of the "header-max-length" rule instead of the hard coded value of 72. This can be ovewritten by setting the 'maxHeaderWidth' configuration in package.json or the CZ_MAX_HEADER_WIDTH environment variable.
 
